@@ -2,6 +2,16 @@ body {
     margin: 0;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+.top {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
 .gmail-images {
     margin-top: 4px;
     font-size: 13px;
@@ -16,10 +26,6 @@ body {
     height: 32px;
     border-radius: 50px;
     padding: 11px;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .logo {
