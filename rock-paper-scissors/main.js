@@ -14,31 +14,48 @@ function computerPlay() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
-
-    if (playerSelection == rock) {
-        if (computerSelection == paper) {
-            return "You lose! paper beats rock";
-        } else if (computerSelection == scissors) {
-            return "You win! rock beats scissors";
+function playRound(player, computer) {
+    if (player == rock) {
+        if (computer == paper) {
+            return 2;
+        } else if (computer == scissors) {
+            return 1;
         }
-    } else if (playerSelection == paper) {
-        if (computerSelection == rock) {
-            return "You win! paper beats rock"; 
-        } else if (computerSelection == scissors) {
-            return "You lose! scissors beats paper";
+    } else if (player == paper) {
+        if (computer == rock) {
+            return 1; 
+        } else if (computer == scissors) {
+            return 2;
         }
-    } else if (playerSelection == scissor) {
-        if (computerSelection == rock) {
-            return "You lose! rock beats scissors";
-        } else if (computerSelection == paper) {
-            return "You win! scissors beats paper"; 
+    } else if (player == scissor) {
+        if (computer == rock) {
+            return 2;
+        } else if (computer == paper) {
+            return 1; 
         }
     } else {
-        return "It's a tie"
+        return 3;
     }
 }
 
-const playerSelection = rock;
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let pScore = 0;
+    let cScore = 0;
+    for (let i = 0; i < 5; +i) {
+        let input = prompt("ENTER");
+        input = input.toLowerCase;
+        if (playRound(input, computerPlay())) {
+            ++pScore;
+        } else {
+            ++cScore;
+        }
+        ++i;
+    }
+    if (pScore > cScore) {
+        return "WIN"; 
+    } else if (pScore < cScore) {
+        return "LOSE";
+    } else {
+        return "TIE";
+    }
+}
