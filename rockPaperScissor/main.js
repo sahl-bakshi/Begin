@@ -63,15 +63,11 @@ function disableButtons() {
     document.querySelector(".rockButton").disabled = true;
     document.querySelector(".paperButton").disabled = true;
     document.querySelector(".scissorButton").disabled = true;
-}   // why does the class .same not work?
+}  
 
 // 5
 
 function output(num, player, computer) {
-    const body = document.body;
-    const head = document.createElement("h4");
-    body.append(head);
-    head.classList.add("msg");  
     
     if (num == 2) {
         ++playerScore;
@@ -81,10 +77,8 @@ function output(num, player, computer) {
     document.querySelector("h2").innerHTML = playerScore + " " + computerScore;
     
     if (playerScore >= 5) {
-        head.textContent = "GAME OVER! YOU WIN";
         disableButtons();
     } else if (computerScore >= 5) {
-        head.textContent = "GAME OVER! YOU LOSE";
         disableButtons();
     } 
     document.querySelector("p").innerHTML = player + " " + computer;

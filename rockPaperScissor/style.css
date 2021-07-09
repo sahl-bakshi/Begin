@@ -12,8 +12,7 @@
 }
 
 .same {
-    font-size: 100px;
-    height: 172px;
+    font-size: 110px;
     background-color: white;
     margin: 0px 20px 0px 20px;
     border: none;
@@ -21,10 +20,11 @@
 }
 
 h1 {
+    font-size: 42px;
     display: flex;
     justify-content: center;
-    margin-top: 90px;
-    padding-bottom: 60px;
+    margin-top: 140px;
+    padding-bottom: 50px;
     font-family: -apple-system;
     color: black;
     word-spacing: 6px;
@@ -67,4 +67,9 @@ h4 {
     justify-content: center;
     word-spacing: 150px;
     font-family: -apple-system;
+}
+
+.msg {
+    margin-top: 60px;
+    font-size: 30px;
 }
