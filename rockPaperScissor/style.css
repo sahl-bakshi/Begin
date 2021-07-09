@@ -1,0 +1,70 @@
+.rockButton {
+}
+
+.paperButton {
+}
+
+.scissorButton {
+}
+
+.same:hover {
+    transform: scale(1.2);
+}
+
+.same {
+    font-size: 100px;
+    height: 172px;
+    background-color: white;
+    margin: 0px 20px 0px 20px;
+    border: none;
+    transition: transform .2s; 
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    padding-bottom: 60px;
+    font-family: -apple-system;
+    color: black;
+    word-spacing: 6px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    word-spacing: 175px;
+    font-family: -apple-system;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-left: 20px;
+    word-spacing: 100px;
+    font-family: -apple-system;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}
+
+h4 {
+    margin-top: 60px;
+    padding-left: 14px;
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system;
+    font-size: 24px;
+    word-spacing: 4px;
+}
+
+.track {
+    display: flex;
+    justify-content: center;
+    word-spacing: 150px;
+    font-family: -apple-system;
+}
