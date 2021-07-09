@@ -11,45 +11,44 @@ function computerPlay() {
 }
 
 function playRound(player, computer) {
+    let num;
     if (player == computer) {
-        return 0;
+        num = 0;
     } else if (player == ROCK) {
         if (computer == PAPER) {
-            return 1;
+            num = 1;
         } else if (computer == SCISSOR) {
-            return 2;
+            num = 2;
         }
     } else if (player == PAPER) {
         if (computer == ROCK) {
-            return 2;
+            num = 2;
         } else if (computer == SCISSOR) {
-            return 1;
+            num = 1;
         }
     } else if (player == SCISSOR) {
         if (computer == ROCK) {
-            return 1;
+            num = 1;
         } else if (computer == PAPER) {
-            return 2;
+            num = 2;
         }
     }
+    return output(num, player, computer);
 }
 
 const rockButton = document.querySelector(".rockButton");
 rockButton.addEventListener('click', function() {
-    let temp = playRound(ROCK, computerPlay());
-    output(temp);
+    playRound(ROCK, computerPlay());
 });
 
 const paperButton = document.querySelector(".paperButton");
 paperButton.addEventListener('click', function() {
-    let temp = playRound(PAPER, computerPlay());
-    output(temp);
+    playRound(PAPER, computerPlay());
 });
 
 const scissorButton = document.querySelector(".scissorButton");
 scissorButton.addEventListener('click', function() {
-    let temp = playRound(SCISSOR, computerPlay());
-    output(temp);
+    playRound(SCISSOR, computerPlay());
 });
 
 function disableButtons() {
@@ -58,27 +57,25 @@ function disableButtons() {
     document.querySelector(".scissorButton").disabled = true;
 }   // why does the class .same not work?
 
-
-function output(num) {
+function output(num, player, computer) {
     const body = document.body;
-
     const head = document.createElement("h4");
     body.append(head);
     head.classList.add("msg");  
-
+    
+    if (num == 2) {
+        ++playerScore;
+    } else if (num == 1) {
+        ++computerScore
+    }
     document.querySelector("h2").innerHTML = playerScore + " " + computerScore;
-
+    
     if (playerScore >= 5) {
         head.textContent = "GAME OVER! YOU WIN";
         disableButtons();
     } else if (computerScore >= 5) {
         head.textContent = "GAME OVER! YOU LOSE";
         disableButtons();
-    }
-
-    if (num == 2) {
-        ++playerScore;
-    } else if (num == 1) {
-        ++computerScore
-    }
+    } 
+    document.querySelector("p").innerHTML = player + " " + computer;
 }

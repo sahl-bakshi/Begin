@@ -53,9 +53,17 @@ h3 {
 
 h4 {
     margin-top: 60px;
+    padding-left: 14px;
     display: flex;
     justify-content: center;
     font-family: -apple-system;
-    font-size: 18px;
+    font-size: 24px;
     word-spacing: 4px;
+}
+
+.track {
+    display: flex;
+    justify-content: center;
+    word-spacing: 150px;
+    font-family: -apple-system;
 }
