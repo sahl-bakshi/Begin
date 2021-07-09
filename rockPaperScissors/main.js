@@ -1,61 +1,84 @@
-const rock = "rock";
-const paper = "paper";
-const scissor = "scissor";
+const ROCK = "rock";
+const PAPER = "paper";
+const SCISSOR = "scissor";
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay() {
     let between = 3;
-    let res = math.floor(math.random() * between);
-    if (res == 0) {
-        return rock;
-    } else if (res == 1) {
-        return paper;
-    } else if (res == 2) {
-       return scissor;
-    }
+    let options = [ROCK, PAPER, SCISSOR];
+    return options[math.floor(math.random() * between)];
 }
 
 function playRound(player, computer) {
-    if (player == rock) {
-        if (computer == paper) {
+    if (player == computer) {
+        return 0;
+    } else if (player == ROCK) {
+        if (computer == PAPER) {
+            return 1;
+        } else if (computer == SCISSOR) {
             return 2;
-        } else if (computer == scissors) {
+        }
+    } else if (player == PAPER) {
+        if (computer == ROCK) {
+            return 2;
+        } else if (computer == SCISSOR) {
             return 1;
         }
-    } else if (player == paper) {
-        if (computer == rock) {
-            return 1; 
-        } else if (computer == scissors) {
+    } else if (player == SCISSOR) {
+        if (computer == ROCK) {
+            return 1;
+        } else if (computer == PAPER) {
             return 2;
         }
-    } else if (player == scissor) {
-        if (computer == rock) {
-            return 2;
-        } else if (computer == paper) {
-            return 1; 
-        }
-    } else {
-        return 3;
     }
 }
 
-function game() {
-    let pScore = 0;
-    let cScore = 0;
-    for (let i = 0; i < 5; +i) {
-        let input = prompt("ENTER");
-        input = input.toLowerCase;
-        if (playRound(input, computerPlay())) {
-            ++pScore;
-        } else {
-            ++cScore;
-        }
-        ++i;
+const rockButton = document.querySelector(".rockButton");
+rockButton.addEventListener('click', function() {
+    let temp = playRound(ROCK, computerPlay());
+    output(temp);
+});
+
+const paperButton = document.querySelector(".paperButton");
+paperButton.addEventListener('click', function() {
+    let temp = playRound(PAPER, computerPlay());
+    output(temp);
+});
+
+const scissorButton = document.querySelector(".scissorButton");
+scissorButton.addEventListener('click', function() {
+    let temp = playRound(SCISSOR, computerPlay());
+    output(temp);
+});
+
+function disableButtons() {
+    document.querySelector(".rockButton").disabled = true;
+    document.querySelector(".paperButton").disabled = true;
+    document.querySelector(".scissorButton").disabled = true;
+}   // why does the class .same not work?
+
+
+function output(num) {
+    const body = document.body;
+
+    const head = document.createElement("h4");
+    body.append(head);
+    head.classList.add("msg");  
+
+    document.querySelector("h2").innerHTML = playerScore + " " + computerScore;
+
+    if (playerScore >= 5) {
+        head.textContent = "GAME OVER! YOU WIN";
+        disableButtons();
+    } else if (computerScore >= 5) {
+        head.textContent = "GAME OVER! YOU LOSE";
+        disableButtons();
     }
-    if (pScore > cScore) {
-        return "WIN"; 
-    } else if (pScore < cScore) {
-        return "LOSE";
-    } else {
-        return "TIE";
+
+    if (num == 2) {
+        ++playerScore;
+    } else if (num == 1) {
+        ++computerScore
     }
 }
