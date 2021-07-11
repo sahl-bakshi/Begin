@@ -9,7 +9,7 @@ let computerScore = 0;
 
 function computerPlay() {
     let between = 3;
-    return math.floor(math.random() * between);
+    return Math.floor(Math.random() * between);
 }
 
 // 2
