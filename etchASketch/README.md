@@ -1,4 +1,4 @@
-### Screenshot
+## Screenshot
 
 <img src = "images/screenshot1.png">
 
@@ -8,7 +8,7 @@
 
 <img src = "images/screenshot4.png">
 
-### New 
+## New 
 
 CSS &nbsp; ```display: grid``` ```margin: 0 auto``` 
 

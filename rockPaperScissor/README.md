@@ -1,8 +1,8 @@
-### Screenshot
+## Screenshot
 
 <img src = "images/screenshot2.png">
 
-### New
+## New
 
 CSS &nbsp; ```transform``` ```transition``` 
 
