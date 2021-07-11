@@ -1,0 +1,45 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 20px;
+    font-size: 80px;
+    font-family: 'VT323', monospace;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    border-color: yellow;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 30px;
+    background-color: white;
+    font-family: 'VT323', monospace;
+    margin-left: 12px;
+    margin-right: 12px;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    width: 575px;
+    height: 575px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.cell {
+    background-color: white;
+    border: 1px solid black;
+}

@@ -26,7 +26,7 @@ function playRound(player, computer) {
     return output(num, player, computer);
 }
 
-// 3
+// 3 buttons
 
 const rockButton = document.querySelector(".rockButton");
 rockButton.addEventListener('click', function() {

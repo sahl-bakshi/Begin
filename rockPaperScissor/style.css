@@ -1,12 +1,3 @@
-.rockButton {
-}
-
-.paperButton {
-}
-
-.scissorButton {
-}
-
 .same:hover {
     transform: scale(1.2);
 }
