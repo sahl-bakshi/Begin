@@ -1,0 +1,98 @@
+:root {
+    --white: white;
+    --blue: rgb(38, 59, 241);
+    --red: rgba(247, 41, 14, 0.877);
+    --grey: rgb(36, 36, 36);
+    --neon: rgb(228, 236, 200);
+}
+
+body {
+    margin-top: 230px;
+}
+
+button {
+    font-size: 20px;
+    align-items: center;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.container {
+    color: black;
+    margin: 0 auto;
+    display: grid;
+    width: 260px;
+    padding: 1em 1em 1em 1em;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--grey);
+    grid-column: span 4;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 
+        1px 1px var(--grey),
+        2px 2px var(--grey),
+        3px 3px var(--grey),
+        4px 4px var(--grey);
+}
+
+.previous {
+    font-size: 15px;
+    min-height: 25px;
+    padding: 10px 0px 10px 10px;
+    background-color: var(--neon);
+}
+
+.current {
+    font-size: 25px;
+    min-height: 30px;
+    padding: 0px 0px 10px 10px;
+    background-color: var(--neon);
+}
+
+.grid {
+    padding: 0em 1em 1em 1em;
+    background-color: var(--grey);
+    display: grid;
+    margin: 0 auto;
+    width: 260px;
+    height: 290px;
+    grid-gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 
+        1px 1px var(--grey),
+        2px 2px var(--grey),
+        3px 3px var(--grey),
+        4px 4px var(--grey);
+}
+
+.number {
+    color: black;
+    background-color: var(--white);
+    border: 1px solid rgb(37, 18, 18);
+    box-shadow: 
+        1px 1px var(--white),
+        2px 2px var(--white),
+        3px 3px var(--white),
+        4px 4px var(--white);
+}
+
+.operator, .other {
+    color: white;
+    background-color: var(--blue);
+    border: 1px solid black;
+    box-shadow: 
+        1px 1px var(--blue),
+        2px 2px var(--blue),
+        3px 3px var(--blue),
+        4px 4px var(--blue);
+}
+
+.clear, .delete, .equal {
+    color: white;
+    background-color: var(--red);
+    border: 1px solid black;
+    box-shadow: 
+        1px 1px var(--red),
+        2px 2px var(--red),
+        3px 3px var(--red),
+        4px 4px var(--red);
+}

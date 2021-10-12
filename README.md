@@ -1,4 +1,4 @@
-## theOdinProject
+## The Odin Project
 
 1. <a href="./googleHomepage">Google Homepage<a>
 2. <a href="./rockPaperScissor">Rock Paper Scissor<a>
