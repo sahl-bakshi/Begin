@@ -33,3 +33,8 @@ h1 {
     height: 12rem;
     width: 24rem;
 }
+
+.right {
+    margin-top: -4rem;
+    margin-right: 24rem;
+}

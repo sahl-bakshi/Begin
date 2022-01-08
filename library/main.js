@@ -7,16 +7,17 @@ function Book(title, author, pages, read) {
 
 let library = [];
 
-//const potter = new Book("Potter", "Rowling", 243, true);
+const harry = new Book("Harry", "Rowling", 243, true);
+const potts = new Book("Potts", "Rowling", 249, false);
 
 
 const body = document.querySelector("body");
-const theGIF = document.querySelector(".image");
+const image = document.querySelector(".image");
 const button = document.querySelector(".button");
 
-
 button.addEventListener('click', () => {
-    theGIF.remove();
+    image.remove();
+    button.classList.add("right");
     addBook();
 })
 
@@ -24,6 +25,6 @@ button.addEventListener('click', () => {
 function addBook() {
     const form = document.createElement('form');
     body.appendChild(form);
-    
-    
+
+    // labelsr
 }
