@@ -8,13 +8,37 @@
 
     <body>
 
-        <div class="wrapper">
-            <h1>Library</h1>
-            <div><img class="image" src="2jgW.gif"></div>
-            <div><button class="button">+ Add Book</button></div>
+         <!-- UI container -->
+        <div class="wrapUI">
+            <div class="interface">
+                <h1>Library</h1>
+                <div class="image"><img src="2jgW.gif"></div>
+                <div class="button"><button>+ Add Book</button></div>
+            </div>
         </div>
 
-        <script src="main.js"></script>
+        <div>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read</th>
+                </tr>
+            </table>
+        </div>
+        <!-- form container -->
+        <div class="wrapForm">
+            <form class="form">
+                <input type="text" id="title" placeholder="Title"><br>
+                <input type="text" id="author" placeholder="Author"><br>
+                <input type="number" id="pages" placeholder="Pages"><br>
+                <label>Read</label><input type="checkbox" id="read"><br>
+                <input type="submit" id="submit" name="Read" value="Submit">
+            </form>
+        </div>
     </body>
+    
+    <script src="main.js"></script>
 
 </html>

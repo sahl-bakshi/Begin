@@ -1,40 +1,59 @@
-:root {
-    --blue: rgb(57, 132, 245);
+
+.wrapUI {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.5px;
+    padding: 10px 14px 10px 12px;
+    border-radius: 4px;
+    color:black;
+    border: solid 1px black;
+    background-color: white;
+}
+
+img {
+    height: 13rem;
+    width: 26rem;
+}
+
+.button, .image {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+.interface {
+    width: 800px;
+}
+
+.update {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
-    font-size: 1.8rem;
-    margin-top: 5rem;
-    margin-left: 24rem;
+    font-size: 26px;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 80px;
 }
 
-.button {
-    display: block;
-    margin: 0 auto;
+.wrapForm {
+    display: none;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+input {
+    padding: 8px;
+    margin: 10px;
+}
+
+label {
+    font-size: 12px;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    padding: 10px 14px 10px 12px;
-    border-radius: 4px;
-    color:rgb(255, 255, 255);
-    border: solid 1px var(--blue);
-    background-color: var(--blue);
-}
-
-.button:hover {
-    cursor: pointer;
-}
-
-.image {
-    display: block;
-    margin: 0 auto;
-    margin-top: 6rem;
-    margin-bottom: 4rem;
-    height: 12rem;
-    width: 24rem;
-}
-
-.right {
-    margin-top: -4rem;
-    margin-right: 24rem;
 }
