@@ -3,6 +3,14 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    
+    this.info = function() {
+        if (read) {
+            return `${this.title} by ${this.author}, ${this.pages} pages, already read`;
+        } else {
+            return `${this.title} by ${this.author}, ${this.pages} pages, not read yet`;
+        }
+    }
 }
 
 let library = [];
@@ -23,10 +31,11 @@ const submit = document.getElementById("submit");
 
 // make remove button
 const remove = document.createElement("button");
+remove.textContent = "remove";
 
 // change read status
 const readStatus = document.createElement("button");
-
+readStatus.textContent = "change read status";
 
 
 // event listeners
@@ -61,5 +70,12 @@ function addToLibrary() {
 }
 
 function displayBooks() {
-
+    let len = library.length;
+    let div = document.createElement("div");
+    div.dataset.index = len;
+    div.classList.add("row");
+    div.appendChild(remove);
+    div.appendChild(readStatus);
+    div.textContent = library[len-1].info();
+    body.appendChild(div);
 }
