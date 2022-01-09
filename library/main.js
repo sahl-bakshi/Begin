@@ -60,6 +60,18 @@ submit.addEventListener("click", function(event) {
 })
 
 
+remove.addEventListener('click', () => {
+    let div 
+})
+
+readStatus.addEventListener('click', function(event) {
+    let n = event.target.parentElement.dataset.index;
+    console.log(n); 
+    // remove number
+    // done
+})
+
+
 function addToLibrary() {
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
@@ -70,12 +82,22 @@ function addToLibrary() {
 }
 
 function displayBooks() {
+
+    if (library.length == 1) {
+        let wrapTb = document.createElement("div");
+        let table = document.createElement("div");
+        wrapTb.classList.add("wrapTb");
+        table.classList.add("table");
+        body.appendChild(wrapTb);
+        wrapTb.appendChild(table);
+    }
+    let tb = document.querySelector(".table");
     let len = library.length;
     let div = document.createElement("div");
-    div.dataset.index = len;
+    div.dataset.index = len - 1;
     div.classList.add("row");
+    div.textContent = library[len-1].info();
     div.appendChild(remove);
     div.appendChild(readStatus);
-    div.textContent = library[len-1].info();
-    body.appendChild(div);
+    tb.appendChild(div);
 }

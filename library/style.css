@@ -59,7 +59,15 @@ label {
 }
 
 .row {
+    margin: 10px;
+}
+
+.table {
+    width: 800px;
+}
+
+.wrapTb {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin: 10px;
 }
