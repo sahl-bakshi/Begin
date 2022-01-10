@@ -7,14 +7,15 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
-        if (read) {
-            return `${this.title} by ${this.author}, ${this.pages} pages, already read`;
-        } else {
-            return `${this.title} by ${this.author}, ${this.pages} pages, not read yet`;
-        }
-    }
 }
+
+function info(book) {
+    if (book.read) {
+        return `${book.title} by ${book.author} - ${book.pages} pages - already read`;
+    } else {
+        return `${book.title} by ${book.author} - ${book.pages} pages - not read yet`;
+    }
+} 
 
 // Query Selectors
 const BODY = document.querySelector("body");
@@ -38,7 +39,6 @@ TABLE_CONTAINER.appendChild(TABLE);
 ADD.addEventListener('click', () => {
     if (library.length == 0) {
         GIF.remove();
-        GUI.classList.add("update");
         HEADER.style.margin = "0px";
         ADD.style.margin = "0px";
     }
@@ -55,6 +55,23 @@ SUBMIT.addEventListener("click", function(event) {
     ADD.style.display = "flex";
     displayBook();
 })
+
+// Other buttons
+const removeBook = (e) => {
+    let i = e.target.parentNode.dataset.index;
+    library.splice(i, 1);
+    e.target.parentNode.remove();
+}  
+
+const readBook = (e) => {
+    let i = e.target.parentNode.dataset.index;
+    if (library[i].read) {
+        library[i].read = false;
+    } else {
+        library[i].read = true;
+    }
+    e.target.parentNode.firstChild.textContent = info(library[i]);
+}
 
 // Add to Library
 function addToLibrary() {
@@ -74,31 +91,22 @@ function displayBook() {
     for (let i = 0; i < DOMLen; ++i) {
        allBooks[i].dataset.index = i;
     }
-    // diaplay
-   let length = library.length;
+    // display
+    let length = library.length;
     let table = document.querySelector(".table");
     let div = document.createElement("div");
+    let pgh = document.createElement("p");
     div.dataset.index = length - 1;
     div.classList.add("row");
-    div.textContent = library[length-1].info();
+    pgh.textContent = info(library[length-1]);
     let remove = document.createElement("button");
     let read = document.createElement("button");
-    remove.textContent = "remove";
-    read.textContent = "read";
+    remove.textContent = "delete";
+    read.textContent = "change read status";
     remove.onclick = removeBook;
     read.onclick = readBook;
+    div.appendChild(pgh);
     div.appendChild(remove);
     div.appendChild(read);
     table.appendChild(div);
-}
-
-const removeBook = (e) => {
-    let i = e.target.parentNode.dataset.index;
-    library.splice(i, 1);
-    e.target.parentNode.remove();
-}  
-
-
-const readBook = (e) => {
-    e.target.textContent = "not read"
 }

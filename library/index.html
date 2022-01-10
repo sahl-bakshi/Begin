@@ -3,32 +3,28 @@
     <head>
         <title>Library</title>
         <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     </head>
 
     <body>
-
          <!-- GUI container -->
         <div class="gui-container">
             <div class="gui">
                 <h1>Library</h1>
-                <div class="image-GIF"><img src="2jgW.gif"></div>
-                <div class="add-button"><button>+ Add Book</button></div>
+                <div class="add-button"><button>Add Book</button></div>
             </div>
         </div>
-        
+        <div class="image-GIF"><img src="./GIFS/snoopy-reading-book.gif"></div>
         <!-- Form container -->
         <div class="form-container">
             <form class="form">
                 <input type="text" id="title" placeholder="Title"><br>
                 <input type="text" id="author" placeholder="Author"><br>
                 <input type="number" id="pages" placeholder="Pages"><br>
-                <label>Read</label><input type="checkbox" id="read"><br>
-                <input type="submit" id="submit" value="Submit">
+                <label>Have you read this book?</label><input type="checkbox" id="read"><br>
+                <button type="submit" id="submit">Submit</button>
             </form>
         </div>
     </body>
-    
-    <script src="main.js"></script>
-
 </html>

@@ -1,44 +1,39 @@
 .gui-container {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 130px;
 }
 
 .gui {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 800px;
 }
 
 img {
-    height: 13rem;
-    width: 26rem;
+    height: 17rem;
+    width: 25rem;
 }
 
-.add-button, .image-GIF {
+.image-GIF {
     display: flex;
     justify-content: center;
-    margin: 40px;
+    margin: 60px;
 }
 
 button {
     font-family: 'Roboto', sans-serif;
-    font-size: 12.5px;
-    padding: 10px 14px 10px 12px;
+    font-size: 13px;
     border-radius: 4px;
     color:black;
     border: solid 1px black;
     background-color: white;
 }
 
-.update {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 h1 {
-    font-size: 26px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 80px;
 }
 
 .form-container {
@@ -55,13 +50,16 @@ input {
 label {
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
+    margin-left: 14px;
+    margin-top: 10px;
 }
 
-.row {
-    margin: 10px;
+#read {
+    margin-top: 20px;
 }
 
 .table {
+    font-family: 'Roboto', sans-serif;
     width: 800px;
 }
 
@@ -69,4 +67,26 @@ label {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+#submit {
+    margin: 30px;
 }
