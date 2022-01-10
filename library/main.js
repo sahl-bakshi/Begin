@@ -7,7 +7,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-
     this.info = function() {
         if (read) {
             return `${this.title} by ${this.author}, ${this.pages} pages, already read`;
@@ -54,7 +53,7 @@ SUBMIT.addEventListener("click", function(event) {
     FORM_CONTAINER.style.display = "none";
     TABLE_CONTAINER.style.display = "flex";
     ADD.style.display = "flex";
-    displayBooks();
+    displayBook();
 })
 
 // Add to Library
@@ -67,10 +66,17 @@ function addToLibrary() {
     library.push(book);
 }
 
-// Display Books
-function displayBooks() {
+// Display All Books
+function displayBook() {
+    // update 
+    let allBooks = document.querySelectorAll(".row");
+    let DOMLen = allBooks.length;
+    for (let i = 0; i < DOMLen; ++i) {
+       allBooks[i].dataset.index = i;
+    }
+    // diaplay
+   let length = library.length;
     let table = document.querySelector(".table");
-    let length = library.length;
     let div = document.createElement("div");
     div.dataset.index = length - 1;
     div.classList.add("row");
@@ -79,7 +85,20 @@ function displayBooks() {
     let read = document.createElement("button");
     remove.textContent = "remove";
     read.textContent = "read";
+    remove.onclick = removeBook;
+    read.onclick = readBook;
     div.appendChild(remove);
     div.appendChild(read);
     table.appendChild(div);
+}
+
+const removeBook = (e) => {
+    let i = e.target.parentNode.dataset.index;
+    library.splice(i, 1);
+    e.target.parentNode.remove();
+}  
+
+
+const readBook = (e) => {
+    e.target.textContent = "not read"
 }
