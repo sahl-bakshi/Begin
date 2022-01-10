@@ -1,8 +1,22 @@
-
-.wrapUI {
+.gui-container {
     display: flex;
     justify-content: center;
     margin-top: 80px;
+}
+
+.gui {
+    width: 800px;
+}
+
+img {
+    height: 13rem;
+    width: 26rem;
+}
+
+.add-button, .image-GIF {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
 }
 
 button {
@@ -13,21 +27,6 @@ button {
     color:black;
     border: solid 1px black;
     background-color: white;
-}
-
-img {
-    height: 13rem;
-    width: 26rem;
-}
-
-.button, .image {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-}
-
-.interface {
-    width: 800px;
 }
 
 .update {
@@ -42,7 +41,7 @@ h1 {
     margin-bottom: 80px;
 }
 
-.wrapForm {
+.form-container {
     display: none;
     justify-content: center;
     margin-top: 80px;
@@ -66,7 +65,7 @@ label {
     width: 800px;
 }
 
-.wrapTb {
+.table-container {
     margin-top: 20px;
     display: flex;
     justify-content: center;

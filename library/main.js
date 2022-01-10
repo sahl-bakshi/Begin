@@ -1,9 +1,13 @@
+// Array
+let library = [];
+
+//Book Object
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    
+
     this.info = function() {
         if (read) {
             return `${this.title} by ${this.author}, ${this.pages} pages, already read`;
@@ -13,65 +17,47 @@ function Book(title, author, pages, read) {
     }
 }
 
-let library = [];
+// Query Selectors
+const BODY = document.querySelector("body");
+const HEADER = document.querySelector("h1");
+const ADD = document.querySelector(".add-button");
+const GIF = document.querySelector(".image-GIF");
+const GUI = document.querySelector(".gui");
+const SUBMIT = document.querySelector("#submit");
+const GUI_CONTAINER = document.querySelector(".gui-container");
+const FORM_CONTAINER = document.querySelector(".form-container");
 
-const harry = new Book("Harry", "Rowling", 243, true);
-const potts = new Book("Potts", "Rowling", 249, false);
+// Make Table
+let TABLE_CONTAINER = document.createElement("div");
+let TABLE = document.createElement("div");
+TABLE_CONTAINER.classList.add("table-container");
+TABLE.classList.add("table");
+BODY.appendChild(TABLE_CONTAINER);
+TABLE_CONTAINER.appendChild(TABLE);
 
-
-// query selectors
-const image = document.querySelector(".image");
-const header = document.querySelector("h1");
-const body = document.querySelector("body");
-const interface = document.querySelector(".interface");
-const button = document.querySelector(".button");
-const wrapIntr = document.querySelector(".wrapUI");
-const wrapForm = document.querySelector(".wrapForm");
-const submit = document.getElementById("submit");
-
-// make remove button
-const remove = document.createElement("button");
-remove.textContent = "remove";
-
-// change read status
-const readStatus = document.createElement("button");
-readStatus.textContent = "change read status";
-
-
-// event listeners
-
-button.addEventListener('click', () => {
+// Event Listeners
+ADD.addEventListener('click', () => {
     if (library.length == 0) {
-        image.remove();
-        header.style.margin = "0px";
-        button.style.margin = "0px";
-        interface.classList.add("update");
+        GIF.remove();
+        GUI.classList.add("update");
+        HEADER.style.margin = "0px";
+        ADD.style.margin = "0px";
     }
-    wrapForm.style.display = "flex";
-    button.style.display = "none";
+    FORM_CONTAINER.style.display = "flex";
+    TABLE_CONTAINER.style.display = "none";
+    ADD.style.display = "none";
 })
 
-submit.addEventListener("click", function(event) {
+SUBMIT.addEventListener("click", function(event) {
     event.preventDefault(); // PREVENTS FORM FROM AUTO SUBMITTING
     addToLibrary();
-    wrapForm.style.display = "none";
-    button.style.display = "flex";
+    FORM_CONTAINER.style.display = "none";
+    TABLE_CONTAINER.style.display = "flex";
+    ADD.style.display = "flex";
     displayBooks();
 })
 
-
-remove.addEventListener('click', () => {
-    let div 
-})
-
-readStatus.addEventListener('click', function(event) {
-    let n = event.target.parentElement.dataset.index;
-    console.log(n); 
-    // remove number
-    // done
-})
-
-
+// Add to Library
 function addToLibrary() {
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
@@ -81,23 +67,19 @@ function addToLibrary() {
     library.push(book);
 }
 
+// Display Books
 function displayBooks() {
-
-    if (library.length == 1) {
-        let wrapTb = document.createElement("div");
-        let table = document.createElement("div");
-        wrapTb.classList.add("wrapTb");
-        table.classList.add("table");
-        body.appendChild(wrapTb);
-        wrapTb.appendChild(table);
-    }
-    let tb = document.querySelector(".table");
-    let len = library.length;
+    let table = document.querySelector(".table");
+    let length = library.length;
     let div = document.createElement("div");
-    div.dataset.index = len - 1;
+    div.dataset.index = length - 1;
     div.classList.add("row");
-    div.textContent = library[len-1].info();
+    div.textContent = library[length-1].info();
+    let remove = document.createElement("button");
+    let read = document.createElement("button");
+    remove.textContent = "remove";
+    read.textContent = "read";
     div.appendChild(remove);
-    div.appendChild(readStatus);
-    tb.appendChild(div);
+    div.appendChild(read);
+    table.appendChild(div);
 }
