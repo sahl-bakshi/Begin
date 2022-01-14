@@ -1,21 +1,18 @@
 // Array
 let library = [];
 
-//Book Object
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-function info(book) {
-    if (book.read) {
-        return `${book.title} by ${book.author} - ${book.pages} pages - already read`;
-    } else {
-        return `${book.title} by ${book.author} - ${book.pages} pages - not read yet`;
+// Book Factory 
+const Book = (title, author, pages, read) => {
+    const info = () => {
+        if (read == true) {
+            return `${title} by ${author} - ${pages} pages - already read`;
+        } else {
+            return `${title} by ${author} - ${pages} pages - not read yet`;
+        }
     }
-} 
+    let change = () => { read = !read; }
+    return { title, author, pages, read, info, change }; 
+}
 
 // Query Selectors
 const BODY = document.querySelector("body");
@@ -65,12 +62,8 @@ const removeBook = (e) => {
 
 const readBook = (e) => {
     let i = e.target.parentNode.dataset.index;
-    if (library[i].read) {
-        library[i].read = false;
-    } else {
-        library[i].read = true;
-    }
-    e.target.parentNode.firstChild.textContent = info(library[i]);
+    library[i].change(); 
+    e.target.parentNode.firstChild.textContent = library[i].info();
 }
 
 // Add to Library
@@ -79,7 +72,7 @@ function addToLibrary() {
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
     let read = document.getElementById("read").checked;
-    let book = new Book(title, author, pages, read);
+    let book = Book(title, author, pages, read);
     library.push(book);
 }
 
@@ -98,7 +91,7 @@ function displayBook() {
     let pgh = document.createElement("p");
     div.dataset.index = length - 1;
     div.classList.add("row");
-    pgh.textContent = info(library[length-1]);
+    pgh.textContent = library[length-1].info();
     let remove = document.createElement("button");
     let read = document.createElement("button");
     remove.textContent = "delete";
