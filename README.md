@@ -1,4 +1,4 @@
-### The Odin Project
+## The Odin Project
 
 1. <a href="./recipes">Recipes<a>
 2. <a href="./landing-page">Landing Page<a>
