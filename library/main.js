@@ -1,7 +1,7 @@
-// Array
+// Array for Library
 let library = [];
 
-// Book Factory 
+// Book Factory Function
 const Book = (title, author, pages, read) => {
     const info = () => {
         if (read == true) {
@@ -24,7 +24,7 @@ const SUBMIT = document.querySelector("#submit");
 const GUI_CONTAINER = document.querySelector(".gui-container");
 const FORM_CONTAINER = document.querySelector(".form-container");
 
-// Make Table
+// Makes Table
 let TABLE_CONTAINER = document.createElement("div");
 let TABLE = document.createElement("div");
 TABLE_CONTAINER.classList.add("table-container");
