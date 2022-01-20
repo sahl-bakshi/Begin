@@ -1,16 +1,16 @@
 function navbar() {
     const navbar = document.createElement("div");
-    navbar.appendChild(createLink("home"));
-    navbar.appendChild(createLink("menu"));
-    navbar.appendChild(createLink("contact"));
+    navbar.appendChild(makeBtn("home", 1));
+    navbar.appendChild(makeBtn("menu", 2));
+    navbar.appendChild(makeBtn("contact", 3));
     // ADD CLASS HERE FOR STYLING IN CSS
     return navbar;
 }
 
-function createLink(string) {
+function makeBtn(string, num) {
     const button = document.createElement("button");
     button.textContent = string;
-    // ADD CLASS HERE FOR STYLING IN CSS
+    button.setAttribute("data-what", num);
     return button;
 }
 

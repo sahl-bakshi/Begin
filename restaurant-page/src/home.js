@@ -1,7 +1,7 @@
 function home() {
     const home = document.createElement("div");
-    home.appendChild(header("Restaurant"));
-    home.appendChild(subtext("Trusted by the Best"));
+    home.appendChild(header("The Bean Stop"));
+    home.setAttribute("id", "page");
     // ADD CLASS HERE FOR CSS STYLING
     return home;
 }
@@ -11,13 +11,6 @@ function header(string) {
     header.textContent = string;
     // ADD CLASS HERE FOR CSS STYLING
     return header;
-}
-
-function subtext(string) {
-    const subtext = docment.createElement("div");
-    subtext.textContent = string;
-    // ADD CLASS HERE FOR CSS STYLING
-    return subtext;
 }
 
 export default home;

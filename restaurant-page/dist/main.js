@@ -7,15 +7,16 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/contact.js":
 /*!************************!*\
   !*** ./src/contact.js ***!
   \************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction contact() {\n    const contact = document.createElement(\"div\");\n    contact.setAttribute(\"id\", \"page\");\n    const phoneAndMsg = document.createElement(\"div\");\n    phoneAndMsg.textContent = \"00 966 123 456 7890\";\n    contact.appendChild(phoneAndMsg);\n    return contact;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (contact);\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
 
 /***/ }),
 
@@ -25,8 +26,7 @@ eval("\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction home() {\n\n    const home = document.createElement(\"div\");\n    home.appendChild();\n    \n}\n\n\nfunction header() {\n\n}\n\n\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (home);\n\n\n\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction home() {\n    const home = document.createElement(\"div\");\n    home.appendChild(header(\"The Bean Stop\"));\n    home.setAttribute(\"id\", \"page\");\n    // ADD CLASS HERE FOR CSS STYLING\n    return home;\n}\n\nfunction header(string) {\n    const header = document.createElement(\"h1\");\n    header.textContent = string;\n    // ADD CLASS HERE FOR CSS STYLING\n    return header;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (home);\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
 
 /***/ }),
 
@@ -36,8 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_menu__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_contact__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar */ \"./src/navbar.js\");\n/* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_navbar__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n\nfunction test() {\n\n    const div = document.getElementById(\"content\");\n    div.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n}\n\ntest();\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n/* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navbar */ \"./src/navbar.js\");\n\n\n\n\n\nfunction init() {\n    const main = document.getElementById(\"content\");\n    const hmpg = (0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n    const navb = (0,_navbar__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n    main.appendChild(navb);\n    main.appendChild(hmpg);\n    addEvents();\n}\n\nfunction addEvents() {\n    const btns = document.querySelectorAll(\"button\");\n    const main = document.getElementById(\"content\");\n    console.log(page);\n    btns.forEach(elem => {\n        elem.addEventListener(\"click\", () => {\n            document.getElementById(\"page\").remove();\n            if (elem.dataset.what == 1) main.appendChild((0,_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"])());\n            if (elem.dataset.what == 2) main.appendChild((0,_menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])());\n            if (elem.dataset.what == 3) main.appendChild((0,_contact__WEBPACK_IMPORTED_MODULE_2__[\"default\"])());\n        })\n    });\n}\n\ninit();\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
 
 /***/ }),
 
@@ -45,9 +44,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hom
 /*!*********************!*\
   !*** ./src/menu.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction menu() {\n    const menu = document.createElement(\"div\");\n    menu.appendChild(makeMenu());\n    menu.setAttribute(\"id\", \"page\");\n    // ADD CLASS HERE FOR STYLING\n    return menu;\n}\n\nfunction makeItem(itemName) {\n    const item = document.createElement(\"div\");\n    const name = document.createElement(\"h4\");\n    const desc = document.createElement(\"p\");\n    \n    // ADD CLASS FOR ALL THREE ABOVE ELEMENTS CSS STYLING\n    name.textContent = itemName;\n    item.appendChild(name);\n    return item;\n}\n\nfunction makeMenu() {\n    const items = document.createElement(\"div\");\n    // ADD CLASS FOR STYLING\n    // REMOVE SOME??\n    items.append(makeItem(\"Black beans\"));\n    items.append(makeItem(\"Cannellini Beans\"));\n    items.append(makeItem(\"Chickpeas\"));\n    items.append(makeItem(\"Kidney beans\"));\n    items.append(makeItem(\"Lima beans\"));\n    items.append(makeItem(\"Great Nothern beans\"));\n    items.append(makeItem(\"Pinto beans\"));\n    items.append(makeItem(\"Soy beans\"));\n    return items;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
 
 /***/ }),
 
@@ -55,9 +54,9 @@ eval("\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
 /*!***********************!*\
   !*** ./src/navbar.js ***!
   \***********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("function navbar() {\n    const navbar = document.createElement(\"div\");\n    navbar.appendChild(createLink(\"home\"));\n    navbar.appendChild(createLink(\"menu\"));\n    navbar.appendChild(createLink(\"contact\"));\n    return navbar;\n}\n\nfunction createLink(string) {\n    const button = document.createElement(\"button\");\n    button.textContent = string;\n    return button;\n}\n\n\n//# sourceURL=webpack://restaurant-page/./src/navbar.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction navbar() {\n    const navbar = document.createElement(\"div\");\n    navbar.appendChild(makeBtn(\"home\", 1));\n    navbar.appendChild(makeBtn(\"menu\", 2));\n    navbar.appendChild(makeBtn(\"contact\", 3));\n    // ADD CLASS HERE FOR STYLING IN CSS\n    return navbar;\n}\n\nfunction makeBtn(string, num) {\n    const button = document.createElement(\"button\");\n    button.textContent = string;\n    button.setAttribute(\"data-what\", num);\n    return button;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (navbar);\n\n//# sourceURL=webpack://restaurant-page/./src/navbar.js?");
 
 /***/ })
 
@@ -88,18 +87,6 @@ eval("function navbar() {\n    const navbar = document.createElement(\"div\");\n
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

@@ -3,11 +3,27 @@ import menu from './menu';
 import contact from './contact';
 import navbar from './navbar';
 
-
-function test() {
-
-    const div = document.getElementById("content");
-    div.appendChild(home());
+function init() {
+    const main = document.getElementById("content");
+    const hmpg = home();
+    const navb = navbar();
+    main.appendChild(navb);
+    main.appendChild(hmpg);
+    addEvents();
 }
 
-test();
+function addEvents() {
+    const btns = document.querySelectorAll("button");
+    const main = document.getElementById("content");
+    console.log(page);
+    btns.forEach(elem => {
+        elem.addEventListener("click", () => {
+            document.getElementById("page").remove();
+            if (elem.dataset.what == 1) main.appendChild(home());
+            if (elem.dataset.what == 2) main.appendChild(menu());
+            if (elem.dataset.what == 3) main.appendChild(contact());
+        })
+    });
+}
+
+init();
