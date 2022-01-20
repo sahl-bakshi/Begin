@@ -2,8 +2,7 @@ function navbar() {
     const navbar = document.createElement("div");
     navbar.appendChild(makeBtn("home", 1));
     navbar.appendChild(makeBtn("menu", 2));
-    navbar.appendChild(makeBtn("contact", 3));
-    // ADD CLASS HERE FOR STYLING IN CSS
+    navbar.appendChild(makeBtn("link", 3));
     return navbar;
 }
 

@@ -1,8 +1,10 @@
+import "../styles/home.css"
+
 function home() {
     const home = document.createElement("div");
-    home.appendChild(header("The Bean Stop"));
+    home.appendChild(header("NFT"));
     home.setAttribute("id", "page");
-    // ADD CLASS HERE FOR CSS STYLING
+    home.classList.add("title-pos");
     return home;
 }
 

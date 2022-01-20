@@ -1,6 +1,6 @@
 import home from './home';
 import menu from './menu';
-import contact from './contact';
+import contact from './link';
 import navbar from './navbar';
 
 function init() {
