@@ -11,7 +11,6 @@ function home() {
 function header(string) {
     const header = document.createElement("h1");
     header.textContent = string;
-    // ADD CLASS HERE FOR CSS STYLING
     return header;
 }
 
