@@ -1,0 +1,22 @@
+.container {
+    width: 100px;
+    margin: 0 auto;
+}
+
+#find {
+    margin-top: 220px;
+}
+
+#city {
+    margin-top: 10px;
+}
+
+body {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    padding: 4px;
+    width: 100px;
+}

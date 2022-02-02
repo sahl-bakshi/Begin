@@ -16,7 +16,17 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst Weather = (city, temp) => {\n    return { city, temp }\n}\n\nasync function getFromAPI() {\n    try {\n        let city = \"riyadh\";\n        let APIkey = \"902a5fc8c8fcf8ecb24976578849edec\";\n        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;\n        let response = await fetch(url, {mode: \"cors\"});\n        let data = await response.json();\n        return Weather(data.name, data.main.temp);\n    } catch(error) {\n        console.log(error);\n    }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getFromAPI);\n\n//# sourceURL=webpack://weather/./src/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst Weather = (data) => {\n    return {\n        city: data.name,\n        temperature: data.main.temp\n    }\n}\n\nasync function getFromAPI(city) {\n    try {\n        let APIkey = \"902a5fc8c8fcf8ecb24976578849edec\";\n        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;\n        let response = await fetch(url, {mode: \"cors\"});\n        let data = await response.json();\n        return Weather(data);\n    } catch(error) {\n        console.log(error);\n    }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getFromAPI);\n\n//# sourceURL=webpack://weather/./src/api.js?");
+
+/***/ }),
+
+/***/ "./src/convert.js":
+/*!************************!*\
+  !*** ./src/convert.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"kelvinToCelsius\": () => (/* binding */ kelvinToCelsius),\n/* harmony export */   \"kelvinToFahrenheit\": () => (/* binding */ kelvinToFahrenheit)\n/* harmony export */ });\nconst kelvinToCelsius = (kelvin) => {\n    return `${Math.round(kelvin - 273.15)}°C`\n}\n\nconst kelvinToFahrenheit = (kelvin) => {\n    return `${Math.round((kelvin - 273.15) * (9/15) + 32)}°F`\n}\n\n\n\n//# sourceURL=webpack://weather/./src/convert.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"show\": () => (/* binding */ show)\n/* harmony export */ });\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n\n\n\nfunction show() {\n    let input = document.getElementById(\"find\");\n    input.addEventListener('keydown', event => {\n\n        if (event.key == 'Enter') {\n            \n            let city = input.value;\n            let weather = (0,_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(city);\n            console.log(weather);\n            console.log(weather.city);\n            /*\n            let info = document.getElementById(\"info\");\n            let name = document.createElement(\"div\");\n            let temp = document.createElement(\"div\");\n            name.textContent = weather.city;\n            temp.textContent = weather.temperature;\n            info.appendChild(name);\n            info.appendChild(temp);\n            */\n        }\n    })\n}\n\n\n\n//# sourceURL=webpack://weather/./src/dom.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n/* harmony import */ var _convert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./convert */ \"./src/convert.js\");\n\n\n\nfunction show() {\n    let input = document.getElementById(\"find\");\n    input.addEventListener('keydown', async (event) => {\n        if (event.key == 'Enter') {\n            let name = input.value;\n            let data = await (0,_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(name);\n            let city = document.getElementById(\"city\");\n            let temp = document.getElementById(\"temp\");\n            city.textContent = data.city;\n            temp.textContent = (0,_convert__WEBPACK_IMPORTED_MODULE_1__.kelvinToCelsius)(data.temperature);\n        }\n    })\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (show);\n\n//# sourceURL=webpack://weather/./src/dom.js?");
 
 /***/ }),
 
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__.show)();\n\n//# sourceURL=webpack://weather/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://weather/./src/index.js?");
 
 /***/ })
 

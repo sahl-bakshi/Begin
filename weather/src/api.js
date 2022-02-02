@@ -5,9 +5,8 @@ const Weather = (data) => {
     }
 }
 
-async function getFromAPI() {
+async function getFromAPI(city) {
     try {
-        let city = "riyadh";
         let APIkey = "902a5fc8c8fcf8ecb24976578849edec";
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
         let response = await fetch(url, {mode: "cors"});

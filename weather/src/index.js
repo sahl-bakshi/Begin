@@ -1,3 +1,3 @@
-import { show } from './dom'
+import show from './dom'
 
 show();
