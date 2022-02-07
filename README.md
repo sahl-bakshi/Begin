@@ -9,3 +9,4 @@
 7. <a href="./pages">Pages<a>
 8. <a href="./weather">Weather<a>
 9. <a href="./testing">Testing<a>
+10. <a href="./memory-card">Memory Card<a>
