@@ -1,10 +1,10 @@
 import React from 'react';
-import Main from './Game';
+import Game from './Game';
 
 function App() {
   return (
     <React.Fragment>
-      <Main></Main>
+      <Game></Game>
     </React.Fragment>
   );
 }
