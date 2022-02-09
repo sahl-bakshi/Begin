@@ -1,14 +1,16 @@
 import React from 'react';
 import Score from './Score';
 import Grid from './Grid';
+import Header from './Header';
 import { data } from '../data';
 import { shuffle } from '../utils';
 import { useState } from 'react';
+import '../styles/style.scss';
 
 // NO USE EFFECT NEEDED
-// COULD HAVE USED IT FOR SHUFFLING OR HANDLING SCORE
+// COULD HAVE USED FOR SHUFFLING / HANDLING SCORE
 
-const Main = () => {
+const Game = () => {
     const [curr, setCurr] = useState(0);
     const [best, setBest] = useState(0);
     const [cards, setCards] = useState(data);
@@ -16,7 +18,7 @@ const Main = () => {
 
     const handleClick = (event) => {
         if (clicked.includes(event.target.src)) {
-            setBest(curr);
+            if (best > curr) setBest(curr);
             setCurr(0);
             setClicked([]);
         } else {
@@ -27,11 +29,14 @@ const Main = () => {
     }
 
     return (
-        <div>
-            <Score curr={curr} best={best}></Score>
+        <>
+            <div className='containerForScoreAndHeader'>
+                <Header></Header>
+                <Score curr={curr} best={best}></Score>
+            </div>
             <Grid links={cards} handleClick={handleClick}></Grid>
-        </div>
+        </>
     );
 }
 
-export default Main;
+export default Game;

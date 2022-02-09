@@ -1,0 +1,21 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+$from-top: 6rem;
+$cards-space: 150px * 6;
+
+.containerForCards {
+    @include flex-center;
+}
+
+.containerForScoreAndHeader {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: $from-top;
+    width: $cards-space;
+    align-items: center;
+    margin-top: $from-top;
+}
